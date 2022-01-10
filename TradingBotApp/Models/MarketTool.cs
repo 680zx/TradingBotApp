@@ -2,8 +2,10 @@
 
 namespace TradingBotApp.Models
 {
-    public class MarketQualifier
+    public class MarketTool
     {
+        public int MarketQualifierId { get; set; }
+
         public string? Name { get; set; }
 
         public bool? Enabled { get; set; }
