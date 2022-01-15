@@ -1,5 +1,5 @@
-﻿using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Mvc;
+﻿using TradingBotApp.DAL.Interfaces;
+using TradingBotApp.DAL.Implementation;
 
 namespace TradingBotApp
 {
@@ -7,20 +7,20 @@ namespace TradingBotApp
     {
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddMvc();
-            services.AddControllersWithViews(MvcOptions =>
-            {
-                MvcOptions.EnableEndpointRouting = false;
-            });
+            services.AddTransient<IMarketToolRepository, FakeMarketToolRepository>();
+            services.AddControllersWithViews();
         }
 
-        public void Configure(IApplicationBuilder app)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseDeveloperExceptionPage();
             app.UseStaticFiles();
             app.UseStatusCodePages();
-            app.UseMvc(routes =>
+            
+            app.UseRouting();
+            app.UseEndpoints(endpoints =>
             {
+                endpoints.MapDefaultControllerRoute();
             });
         }
     }
