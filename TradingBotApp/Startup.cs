@@ -35,6 +35,8 @@ namespace TradingBotApp
             {
                 endpoints.MapDefaultControllerRoute();
             });
+
+            SeedData.EnsurePopulated(app);
         }
     }
 }
