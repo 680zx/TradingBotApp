@@ -1,7 +1,7 @@
-﻿using TradingBotApp.DAL.Interfaces;
-using TradingBotApp.DAL.Implementation;
+﻿using TradingBotApp.DAL.Implementation;
 using TradingBotApp.DAL;
 using Microsoft.EntityFrameworkCore;
+using TradingBotApp.DAL.Repositories.Interfaces;
 
 namespace TradingBotApp
 {
@@ -16,7 +16,7 @@ namespace TradingBotApp
 
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddTransient<IMarketToolRepository, FakeMarketToolRepository>();
+            services.AddTransient<ITradingBotAppRepository, FakeMarketToolRepository>();
             services.AddControllersWithViews();
             services.AddDbContext<AppDbContext>(options =>
             {

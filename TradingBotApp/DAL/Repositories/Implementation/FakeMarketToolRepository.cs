@@ -1,9 +1,9 @@
-﻿using TradingBotApp.DAL.Interfaces;
+﻿using TradingBotApp.DAL.Repositories.Interfaces;
 using TradingBotApp.Models;
 
 namespace TradingBotApp.DAL.Implementation
 {
-    public class FakeMarketToolRepository : IMarketToolRepository
+    public class FakeMarketToolRepository : ITradingBotAppRepository
     {
         public IQueryable<MarketTool> MarketTools => new List<MarketTool>
         {

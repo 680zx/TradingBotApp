@@ -1,8 +1,8 @@
 ﻿using TradingBotApp.Models;
 
-namespace TradingBotApp.DAL.Interfaces
+namespace TradingBotApp.DAL.Repositories.Interfaces
 {
-    public interface IMarketToolRepository
+    public interface ITradingBotAppRepository
     {
         IQueryable<MarketTool> MarketTools { get; }
     }
