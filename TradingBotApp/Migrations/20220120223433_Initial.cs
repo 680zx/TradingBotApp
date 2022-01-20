@@ -12,14 +12,15 @@ namespace TradingBotApp.Migrations
                 name: "MarketTools",
                 columns: table => new
                 {
-                    MarketQualifierID = table.Column<int>(type: "int", nullable: false)
+                    ID = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
-                    Enabled = table.Column<bool>(type: "bit", nullable: true)
+                    Enabled = table.Column<bool>(type: "bit", nullable: true),
+                    MarketConditionQualifierID = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_MarketTools", x => x.MarketQualifierID);
+                    table.PrimaryKey("PK_MarketTools", x => x.ID);
                 });
         }
 

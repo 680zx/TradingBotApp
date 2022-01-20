@@ -12,7 +12,7 @@ using TradingBotApp.DAL;
 namespace TradingBotApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20220116210422_Initial")]
+    [Migration("20220120223433_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -26,19 +26,22 @@ namespace TradingBotApp.Migrations
 
             modelBuilder.Entity("TradingBotApp.Models.MarketTool", b =>
                 {
-                    b.Property<int>("MarketQualifierID")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MarketQualifierID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
                     b.Property<bool?>("Enabled")
                         .HasColumnType("bit");
 
+                    b.Property<int>("MarketConditionQualifierID")
+                        .HasColumnType("int");
+
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("MarketQualifierID");
+                    b.HasKey("ID");
 
                     b.ToTable("MarketTools");
                 });

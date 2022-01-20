@@ -7,7 +7,7 @@ namespace TradingBotApp.Models
     public class MarketTool
     {
         [Key]
-        public int MarketToolID { get; set; }
+        public int ID { get; set; }
 
         public string? Name { get; set; }
 

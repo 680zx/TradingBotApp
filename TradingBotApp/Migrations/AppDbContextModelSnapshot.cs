@@ -24,11 +24,11 @@ namespace TradingBotApp.Migrations
 
             modelBuilder.Entity("TradingBotApp.Models.MarketTool", b =>
                 {
-                    b.Property<int>("MarketToolID")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MarketToolID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
 
                     b.Property<bool?>("Enabled")
                         .HasColumnType("bit");
@@ -39,7 +39,7 @@ namespace TradingBotApp.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
-                    b.HasKey("MarketToolID");
+                    b.HasKey("ID");
 
                     b.ToTable("MarketTools");
                 });
