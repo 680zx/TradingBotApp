@@ -3,11 +3,20 @@
 *@
 @model IQueryable<MarketTool>
 
-<h3>trading bot app market tools page</h3>
+<h3>Market tools</h3>
 
 @foreach (var tool in Model)
 {
-    <div>
-        <h3>@tool.ID    @tool.Name  @tool.Enabled @tool.MarketConditionQualifierID</h3>
+    <div class="card m-1 p-1">
+        <div class="bg-light p-1">
+            <h4>
+                @tool.Name
+                <span
+                class="badge badge-pill badge-primary" style="float:right">
+                    <small>Edit</small>
+                </span>
+            </h4>
+        </div>
+        <div class="card-text p-1">Tool ID: @tool.ID    IsEnabled: @tool.Enabled   Qualifier ID: @tool.MarketConditionQualifierID</div>
     </div>
 }
