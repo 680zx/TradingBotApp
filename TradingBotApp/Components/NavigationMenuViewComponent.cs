@@ -4,9 +4,9 @@ namespace TradingBotApp.Components
 {
     public class NavigationMenuViewComponent : ViewComponent
     {
-        public string Invoke()
+        public IViewComponentResult Invoke()
         {
-            return "Navigation menu panel: [hello]";
+            return View();
         }
     }
 }
