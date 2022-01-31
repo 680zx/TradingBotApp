@@ -1,6 +1,4 @@
-using TradingBotApp;
-
-namespace WebApplication1
+namespace TradingBotApp
 {
     public class Program
     {
