@@ -1,7 +1,7 @@
-﻿using TradingBotApp.DAL.Repositories.Interfaces;
+﻿using TradingBotApp.Data.Repositories.Interfaces;
 using TradingBotApp.Models;
 
-namespace TradingBotApp.DAL.Repositories.Implementation
+namespace TradingBotApp.Data.Repositories.Implementation
 {
     public class TradingBotAppRepository : ITradingBotAppRepository
     {

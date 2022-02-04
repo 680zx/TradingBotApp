@@ -1,7 +1,7 @@
-﻿using TradingBotApp.DAL.Repositories.Interfaces;
+﻿using TradingBotApp.Data.Repositories.Interfaces;
 using TradingBotApp.Models;
 
-namespace TradingBotApp.DAL.Implementation
+namespace TradingBotApp.Data.Implementation
 {
     public class FakeMarketToolRepository : ITradingBotAppRepository
     {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using TradingBotApp.Models;
 
-namespace TradingBotApp.DAL
+namespace TradingBotApp.Data
 {
     public static class SeedData
     {

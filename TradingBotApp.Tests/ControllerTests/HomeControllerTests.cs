@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Moq;
-using TradingBotApp.DAL.Repositories.Interfaces;
+using TradingBotApp.Data.Repositories.Interfaces;
 using TradingBotApp.Models;
 using MarketProcessor.MarketConditionQualifiers.Implementation;
 using TradingBotApp.Controllers;

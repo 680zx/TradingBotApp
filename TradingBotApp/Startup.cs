@@ -1,7 +1,7 @@
-﻿using TradingBotApp.DAL;
+﻿using TradingBotApp.Data;
 using Microsoft.EntityFrameworkCore;
-using TradingBotApp.DAL.Repositories.Interfaces;
-using TradingBotApp.DAL.Repositories.Implementation;
+using TradingBotApp.Data.Repositories.Interfaces;
+using TradingBotApp.Data.Repositories.Implementation;
 
 namespace TradingBotApp
 {

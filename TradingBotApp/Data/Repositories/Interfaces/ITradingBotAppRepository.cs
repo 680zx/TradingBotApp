@@ -1,6 +1,6 @@
 ﻿using TradingBotApp.Models;
 
-namespace TradingBotApp.DAL.Repositories.Interfaces
+namespace TradingBotApp.Data.Repositories.Interfaces
 {
     public interface ITradingBotAppRepository
     {
