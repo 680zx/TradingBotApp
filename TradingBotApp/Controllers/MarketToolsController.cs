@@ -3,20 +3,18 @@ using TradingBotApp.DAL.Repositories.Interfaces;
 
 namespace TradingBotApp.Controllers
 {
-    public class HomeController : Controller
+    public class MarketToolsController : Controller
     {
         private ITradingBotAppRepository _repository;
 
-        public HomeController(ITradingBotAppRepository repository)
+        public MarketToolsController(ITradingBotAppRepository repository)
         {
             _repository = repository;
         }
 
         public IActionResult Index()
         {
-            ViewData["Message"] = "Welcome to Trading Bot App";
-
-            return View();
+            return View(_repository.MarketTools);
         }
     }
 }
