@@ -9,13 +9,13 @@ namespace TradingBotApp.Models
         [Key]
         public int ID { get; set; }
 
-        public string? Name { get; set; }
+        public string Name { get; set; }
 
         public bool? Enabled { get; set; }
 
         public int MarketConditionQualifierID { get; set; }
 
         [NotMapped]
-        public IMarketConditionQualifier? MarketConditionQualifier { get; set; }
+        public IMarketConditionQualifier MarketConditionQualifier { get; set; }
     }
 }
