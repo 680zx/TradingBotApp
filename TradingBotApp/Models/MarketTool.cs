@@ -7,10 +7,13 @@ namespace TradingBotApp.Models
     public class MarketTool
     {
         [Key]
+        [Display(Name = "ID")]
         public int ID { get; set; }
 
+        [Display(Name = "Name")]
         public string? Name { get; set; }
 
+        [Display(Name = "Is Enabled")]
         public bool? Enabled { get; set; }
 
         public int MarketConditionQualifierID { get; set; }
