@@ -11,7 +11,7 @@ namespace TradingBotApp.Models
         public int ID { get; set; }
 
         [Display(Name = "Name")]
-        public string? Name { get; set; }
+        public string Name { get; set; }
 
         [Display(Name = "Is Enabled")]
         public bool? Enabled { get; set; }
@@ -19,6 +19,6 @@ namespace TradingBotApp.Models
         public int MarketConditionQualifierID { get; set; }
 
         [NotMapped]
-        public IMarketConditionQualifier? MarketConditionQualifier { get; set; }
+        public IMarketConditionQualifier MarketConditionQualifier { get; set; }
     }
 }
