@@ -16,5 +16,17 @@ namespace TradingBotApp.Controllers
         {
             return View(_repository.MarketTools);
         }
+
+        public IActionResult Edit(int? id)
+        {
+            if (id == null)
+                return NotFound();
+
+            var marketTool = _repository.MarketTools;
+            if (marketTool == null)
+                return NotFound();
+
+            return View(marketTool);
+        }
     }
 }

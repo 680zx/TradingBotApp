@@ -14,7 +14,7 @@ namespace TradingBotApp.Models
         public string Name { get; set; }
 
         [Display(Name = "Is Enabled")]
-        public bool? Enabled { get; set; }
+        public bool Enabled { get; set; }
 
         public int MarketConditionQualifierID { get; set; }
 
