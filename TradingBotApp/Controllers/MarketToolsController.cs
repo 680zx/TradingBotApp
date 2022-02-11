@@ -22,7 +22,8 @@ namespace TradingBotApp.Controllers
             if (id == null)
                 return NotFound();
 
-            var marketTool = _repository.MarketTools;
+            var marketTool = _repository.MarketTools.Where(i => i.ID == id.Value)
+                .First();
             if (marketTool == null)
                 return NotFound();
 

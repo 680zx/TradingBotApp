@@ -33,12 +33,12 @@ namespace TradingBotApp
             app.UseRouting();
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapControllerRoute("default", "Home",
-                    new { Controller = "Home", action = "Index" });
+                //endpoints.MapControllerRoute("default", "Home",
+                //    new { Controller = "Home", action = "Index" });
 
-                endpoints.MapControllerRoute("default", "MarketTools",
-                    new { Controller = "MarketTools", action = "Index" });
-
+                //endpoints.MapControllerRoute("default", "MarketTools",
+                //    new { Controller = "MarketTools", action = "Index" });
+                //endpoints.MapControllers();
                 endpoints.MapDefaultControllerRoute();
             });
 
