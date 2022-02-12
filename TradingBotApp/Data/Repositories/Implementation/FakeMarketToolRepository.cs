@@ -14,7 +14,7 @@ namespace TradingBotApp.Data.Implementation
             new MarketTool { Name = "FakeTool4", Enabled = true },
         }.AsQueryable();
 
-        public IQueryable<IMarketConditionQualifier> MarketQualifiers => new List<IMarketConditionQualifier>
+        public IQueryable<MarketQualifier> MarketQualifiers => new List<MarketQualifier>
         {
 
         }.AsQueryable();

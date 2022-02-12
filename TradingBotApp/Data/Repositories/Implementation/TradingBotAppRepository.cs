@@ -15,6 +15,6 @@ namespace TradingBotApp.Data.Repositories.Implementation
 
         public IQueryable<MarketTool> MarketTools => _dbContext.MarketTools;
 
-        public IQueryable<IMarketConditionQualifier> MarketQualifiers => _dbContext.MarketQualifiers;
+        public IQueryable<MarketQualifier> MarketQualifiers => _dbContext.MarketQualifiers;
     }
 }

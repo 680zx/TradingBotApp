@@ -7,6 +7,6 @@ namespace TradingBotApp.Data.Repositories.Interfaces
     {
         IQueryable<MarketTool> MarketTools { get; }
 
-        IQueryable<IMarketConditionQualifier> MarketQualifiers { get; }
+        IQueryable<MarketQualifier> MarketQualifiers { get; }
     }
 }
