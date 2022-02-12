@@ -1,4 +1,5 @@
-﻿using TradingBotApp.Data.Repositories.Interfaces;
+﻿using MarketProcessor.MarketConditionQualifiers.Interfaces;
+using TradingBotApp.Data.Repositories.Interfaces;
 using TradingBotApp.Models;
 
 namespace TradingBotApp.Data.Implementation
@@ -11,6 +12,11 @@ namespace TradingBotApp.Data.Implementation
             new MarketTool { Name = "FakeTool2", Enabled = true },
             new MarketTool { Name = "FakeTool3", Enabled = true },
             new MarketTool { Name = "FakeTool4", Enabled = true },
+        }.AsQueryable();
+
+        public IQueryable<IMarketConditionQualifier> MarketQualifiers => new List<IMarketConditionQualifier>
+        {
+
         }.AsQueryable();
     }
 }
