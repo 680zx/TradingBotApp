@@ -24,6 +24,8 @@ namespace TradingBotApp.Data
                     new MarketTool { Name = "BearMarket", Enabled = false, MarketConditionQualifierID = 4 }
                  );
 
+                //context.MarketQualifiers.AddRange
+
                 context.SaveChanges();
             }
         }

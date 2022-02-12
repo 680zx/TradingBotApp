@@ -1,4 +1,5 @@
-﻿using TradingBotApp.Data.Repositories.Interfaces;
+﻿using MarketProcessor.MarketConditionQualifiers.Interfaces;
+using TradingBotApp.Data.Repositories.Interfaces;
 using TradingBotApp.Models;
 
 namespace TradingBotApp.Data.Repositories.Implementation
@@ -13,5 +14,7 @@ namespace TradingBotApp.Data.Repositories.Implementation
         }
 
         public IQueryable<MarketTool> MarketTools => _dbContext.MarketTools;
+
+        IQueryable<IMarketConditionQualifier> MarketQualifiers => _dbContext.MarketQualifiers;
     }
 }

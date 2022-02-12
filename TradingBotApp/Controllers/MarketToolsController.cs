@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TradingBotApp.Data.Repositories.Interfaces;
+using MarketProcessor.MarketConditionQualifiers.Implementation;
 
 namespace TradingBotApp.Controllers
 {
@@ -26,6 +27,9 @@ namespace TradingBotApp.Controllers
                 .First();
             if (marketTool == null)
                 return NotFound();
+
+            if (marketTool.MarketConditionQualifier is RamvQualifier ramvQualifier)
+                return View("RamvViewEdit", ramvQualifier);
 
             return View(marketTool);
         }
