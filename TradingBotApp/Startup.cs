@@ -22,10 +22,13 @@ namespace TradingBotApp
                 optionsBuilder.UseSqlServer(Configuration["ConnectionStrings:TradingBotDbConnecton"],
                     options => options.EnableRetryOnFailure());
             });
+
             services.AddScoped<ITradingBotAppRepository, TradingBotAppRepository>();
+            services.AddTransient<SeedData>();
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,
+            SeedData seedData, IHostApplicationLifetime lifetime)
         {                        
             app.UseDeveloperExceptionPage();
             app.UseStaticFiles();
@@ -43,7 +46,13 @@ namespace TradingBotApp
                 endpoints.MapDefaultControllerRoute();
             });
 
-            SeedData.EnsurePopulated(app);
+            var cmdLineInit = (Configuration["INITDB"] ?? "false") == "true";
+            if (env.IsDevelopment() || cmdLineInit)
+            {
+                seedData.SeedDatabase(app);
+                if (cmdLineInit)
+                    lifetime.StopApplication();
+            }
         }
     }
 }

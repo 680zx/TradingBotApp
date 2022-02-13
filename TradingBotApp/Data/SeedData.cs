@@ -3,9 +3,13 @@ using TradingBotApp.Models;
 
 namespace TradingBotApp.Data
 {
-    public static class SeedData
+    public class SeedData
     {
-        public static void EnsurePopulated(IApplicationBuilder app)
+        private AppDbContext dbContext;
+
+        public SeedData(AppDbContext dbContext) { this.dbContext = dbContext; }
+
+        public void SeedDatabase(IApplicationBuilder app)
         {
             AppDbContext context = app.ApplicationServices.CreateScope()
                 .ServiceProvider.GetRequiredService<AppDbContext>();
