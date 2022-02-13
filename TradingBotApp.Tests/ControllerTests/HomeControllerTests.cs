@@ -20,13 +20,12 @@ namespace TradingBotApp.Tests.ControllerTests
             const int TOOL_ID = 1;
             const string TOOL_NAME = "toolId1";
             const bool TOOL_ENABLED = true;
-            const int CONDITION_QUALIFIER_ID = 1;
 
             Mock<ITradingBotAppRepository> mock = new Mock<ITradingBotAppRepository>();
             mock.Setup(i => i.MarketTools).Returns((new MarketTool[]
             {
                 new MarketTool { ID = TOOL_ID, Name = TOOL_NAME, Enabled = TOOL_ENABLED, 
-                    MarketConditionQualifierID = CONDITION_QUALIFIER_ID, MarketConditionQualifier = new RamvQualifier() }
+                     MarketConditionQualifier = new RamvQualifier() }
             }).AsQueryable());
         
             HomeController controller = new HomeController(mock.Object);
@@ -39,7 +38,6 @@ namespace TradingBotApp.Tests.ControllerTests
             Assert.AreEqual(TOOL_ID, resArray[0].ID);
             Assert.AreEqual(TOOL_NAME, resArray[0].Name);
             Assert.AreEqual(TOOL_ENABLED, resArray[0].Enabled);
-            Assert.AreEqual(CONDITION_QUALIFIER_ID, resArray[0].MarketConditionQualifierID);
         }
     }
 }

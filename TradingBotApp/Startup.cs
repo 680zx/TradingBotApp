@@ -17,7 +17,7 @@ namespace TradingBotApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<AppDbContext>(optionsBuilder =>
+            services.AddDbContext<DataContext>(optionsBuilder =>
             {
                 optionsBuilder.UseSqlServer(Configuration["ConnectionStrings:TradingBotDbConnecton"],
                     options => options.EnableRetryOnFailure());

@@ -5,14 +5,14 @@ namespace TradingBotApp.Data
 {
     public class SeedData
     {
-        private AppDbContext dbContext;
+        private DataContext dbContext;
 
-        public SeedData(AppDbContext dbContext) { this.dbContext = dbContext; }
+        public SeedData(DataContext dbContext) { this.dbContext = dbContext; }
 
         public void SeedDatabase(IApplicationBuilder app)
         {
-            AppDbContext context = app.ApplicationServices.CreateScope()
-                .ServiceProvider.GetRequiredService<AppDbContext>();
+            DataContext context = app.ApplicationServices.CreateScope()
+                .ServiceProvider.GetRequiredService<DataContext>();
 
             if (context.Database.GetPendingMigrations().Any())
             {
@@ -22,10 +22,10 @@ namespace TradingBotApp.Data
             if (!context.MarketTools.Any())
             {
                 context.MarketTools.AddRange(
-                    new MarketTool { Name = "RAMV", Enabled = true, MarketConditionQualifierID = 1 },
-                    new MarketTool { Name = "PriceAlarm", Enabled = true, MarketConditionQualifierID = 2 },
-                    new MarketTool { Name = "BullMarket", Enabled = true, MarketConditionQualifierID = 3 },
-                    new MarketTool { Name = "BearMarket", Enabled = false, MarketConditionQualifierID = 4 }
+                    new MarketTool { Name = "RAMV", Enabled = true },
+                    new MarketTool { Name = "PriceAlarm", Enabled = true },
+                    new MarketTool { Name = "BullMarket", Enabled = true },
+                    new MarketTool { Name = "BearMarket", Enabled = false }
                  );
 
                 //context.MarketQualifiers.AddRange

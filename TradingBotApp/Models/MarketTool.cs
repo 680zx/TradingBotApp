@@ -15,8 +15,8 @@ namespace TradingBotApp.Models
 
         [Display(Name = "Is Enabled")]
         public bool Enabled { get; set; }
-
-        public int MarketConditionQualifierID { get; set; }
+        
+        public string MarketQualifierSettingsJson { get; set; }
 
         [NotMapped]
         public IMarketConditionQualifier MarketConditionQualifier { get; set; }
