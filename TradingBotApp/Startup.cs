@@ -17,15 +17,16 @@ namespace TradingBotApp
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews();
-            services.AddDbContext<AppDbContext>(options =>
+            services.AddDbContext<AppDbContext>(optionsBuilder =>
             {
-                options.UseSqlServer(Configuration["ConnectionStrings:TradingBotDbConnecton"]);
+                optionsBuilder.UseSqlServer(Configuration["ConnectionStrings:TradingBotDbConnecton"],
+                    options => options.EnableRetryOnFailure());
             });
             services.AddScoped<ITradingBotAppRepository, TradingBotAppRepository>();
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
-        {
+        {                        
             app.UseDeveloperExceptionPage();
             app.UseStaticFiles();
             app.UseStatusCodePages();
