@@ -1,6 +1,4 @@
-﻿using MarketProcessor.MarketConditionQualifiers.Interfaces;
-using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace TradingBotApp.Models
 {
@@ -11,14 +9,11 @@ namespace TradingBotApp.Models
         public int ID { get; set; }
 
         [Display(Name = "Name")]
-        public string Name { get; set; }
+        public virtual string Name { get; }
 
         [Display(Name = "Is Enabled")]
         public bool Enabled { get; set; }
-        
-        public string MarketQualifierSettingsJson { get; set; }
 
-        [NotMapped]
-        public IMarketConditionQualifier MarketConditionQualifier { get; set; }
+        public User User { get; set; }
     }
 }
