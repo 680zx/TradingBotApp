@@ -5,9 +5,9 @@ namespace TradingBotApp.Controllers
 {
     public class HomeController : Controller
     {
-        private ITradingBotAppRepository _repository;
+        private IMarketToolRepository _repository;
 
-        public HomeController(ITradingBotAppRepository repository)
+        public HomeController(IMarketToolRepository repository)
         {
             _repository = repository;
         }

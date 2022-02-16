@@ -6,32 +6,32 @@ namespace TradingBotApp.Controllers
 {
     public class MarketToolsController : Controller
     {
-        private ITradingBotAppRepository _repository;
+        private IMarketToolRepository _marketToolsRepository;
 
-        public MarketToolsController(ITradingBotAppRepository repository)
+        public MarketToolsController(IMarketToolRepository repository)
         {
-            _repository = repository;
+            _marketToolsRepository = repository;
         }
 
-        //public IActionResult Index()
-        //{
-        //    return View(_repository.MarketTools);
-        //}
+        public IActionResult Index()
+        {
+            return View(_marketToolsRepository.GetAll(20));
+        }
 
-        //public IActionResult Edit(int? id)
-        //{
-        //    if (id == null)
-        //        return NotFound();
+        public IActionResult Edit(string name)
+        {
+            if (name == null)
+                return NotFound();
 
-        //    var marketTool = _repository.MarketTools.Where(i => i.ID == id.Value)
-        //        .First();
-        //    if (marketTool == null)
-        //        return NotFound();
+            var marketTool = _marketToolsRepository.GetAll(20).Where(i => i.Name == name)
+                .First();
+            if (marketTool == null)
+                return NotFound();
 
-        //    //if (marketTool.MarketConditionQualifier is RamvQualifier ramvQualifier)
-        //    //    return View("RamvViewEdit", ramvQualifier);
+            //if (marketTool.MarketConditionQualifier is RamvQualifier ramvQualifier)
+            //    return View("RamvViewEdit", ramvQualifier);
 
-        //    return View(marketTool);
-        //}
+            return View(marketTool);
+        }
     }
 }

@@ -23,7 +23,7 @@ namespace TradingBotApp
                     options => options.EnableRetryOnFailure());
             });
 
-            services.AddScoped<ITradingBotAppRepository, TradingBotAppRepository>();
+            services.AddScoped<IMarketToolRepository, MarketToolRepository>();
             services.AddTransient<SeedData>();
         }
 
