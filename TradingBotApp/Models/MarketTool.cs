@@ -2,18 +2,16 @@
 
 namespace TradingBotApp.Models
 {
-    public class MarketTool
+    public abstract class MarketTool
     {
         [Key]
         [Display(Name = "ID")]
         public int ID { get; set; }
 
         [Display(Name = "Name")]
-        public virtual string Name { get; }
+        public virtual string Name { get; set;  }
 
         [Display(Name = "Is Enabled")]
-        public bool Enabled { get; set; }
-
-        public User User { get; set; }
+        public bool Status { get; set; }
     }
 }

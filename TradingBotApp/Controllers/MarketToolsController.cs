@@ -13,25 +13,25 @@ namespace TradingBotApp.Controllers
             _repository = repository;
         }
 
-        public IActionResult Index()
-        {
-            return View(_repository.MarketTools);
-        }
+        //public IActionResult Index()
+        //{
+        //    return View(_repository.MarketTools);
+        //}
 
-        public IActionResult Edit(int? id)
-        {
-            if (id == null)
-                return NotFound();
+        //public IActionResult Edit(int? id)
+        //{
+        //    if (id == null)
+        //        return NotFound();
 
-            var marketTool = _repository.MarketTools.Where(i => i.ID == id.Value)
-                .First();
-            if (marketTool == null)
-                return NotFound();
+        //    var marketTool = _repository.MarketTools.Where(i => i.ID == id.Value)
+        //        .First();
+        //    if (marketTool == null)
+        //        return NotFound();
 
-            if (marketTool.MarketConditionQualifier is RamvQualifier ramvQualifier)
-                return View("RamvViewEdit", ramvQualifier);
+        //    //if (marketTool.MarketConditionQualifier is RamvQualifier ramvQualifier)
+        //    //    return View("RamvViewEdit", ramvQualifier);
 
-            return View(marketTool);
-        }
+        //    return View(marketTool);
+        //}
     }
 }

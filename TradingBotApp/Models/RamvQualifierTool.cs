@@ -9,5 +9,7 @@
         public int MinRecurrentCandleStickPeriod { get; set; }
 
         public int MaxRecurrentCandleStickPeriod { get; set; }
+
+        public User User { get; set; }
     }
 }

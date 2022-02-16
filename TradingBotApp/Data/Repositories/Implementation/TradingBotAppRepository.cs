@@ -12,6 +12,7 @@ namespace TradingBotApp.Data.Repositories.Implementation
             _dbContext = dbContext;
         }
 
-        public IQueryable<MarketTool> MarketTools => _dbContext.MarketTools;
+        public IQueryable<User> Users => _dbContext.Users;
+        public IQueryable<RamvQualifierTool> RamvQualifiers  => _dbContext.RamvQualifierTool;
     }
 }

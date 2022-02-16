@@ -4,6 +4,7 @@ namespace TradingBotApp.Data.Repositories.Interfaces
 {
     public interface ITradingBotAppRepository
     {
-        IQueryable<MarketTool> MarketTools { get; }
+        public IQueryable<User> Users { get; }
+        public IQueryable<RamvQualifierTool> RamvQualifiers { get; }
     }
 }

@@ -20,19 +20,19 @@ namespace TradingBotApp.Data
                 context.Database.Migrate();
             }
 
-            if (!context.MarketTools.Any())
-            {
-                //context.MarketTools.AddRange(
-                //    new MarketTool { Name = "RAMV", Enabled = true },
-                //    new MarketTool { Name = "PriceAlarm", Enabled = true },
-                //    new MarketTool { Name = "BullMarket", Enabled = true },
-                //    new MarketTool { Name = "BearMarket", Enabled = false }
-                // );
+            //if (!context.MarketTools.Any())
+            //{
+            //    context.MarketTools.AddRange(
+            //        new MarketTool { Name = "RAMV", Enabled = true },
+            //        new MarketTool { Name = "PriceAlarm", Enabled = true },
+            //        new MarketTool { Name = "BullMarket", Enabled = true },
+            //        new MarketTool { Name = "BearMarket", Enabled = false }
+            //     );
 
-                //context.MarketQualifiers.AddRange
+            //    context.MarketQualifiers.AddRange
 
-                context.SaveChanges();
-            }
+            //    context.SaveChanges();
+            //}
         }
     }
 }
