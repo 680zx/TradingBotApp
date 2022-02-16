@@ -23,10 +23,10 @@ namespace TradingBotApp.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "RamvQualifierTool",
+                name: "RamvQualifiers",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
                     MacdMaxDeviation = table.Column<double>(type: "float", nullable: false),
@@ -37,24 +37,24 @@ namespace TradingBotApp.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_RamvQualifierTool", x => x.ID);
+                    table.PrimaryKey("PK_RamvQualifiers", x => x.Id);
                     table.ForeignKey(
-                        name: "FK_RamvQualifierTool_Users_UserId",
+                        name: "FK_RamvQualifiers_Users_UserId",
                         column: x => x.UserId,
                         principalTable: "Users",
                         principalColumn: "Id");
                 });
 
             migrationBuilder.CreateIndex(
-                name: "IX_RamvQualifierTool_UserId",
-                table: "RamvQualifierTool",
+                name: "IX_RamvQualifiers_UserId",
+                table: "RamvQualifiers",
                 column: "UserId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "RamvQualifierTool");
+                name: "RamvQualifiers");
 
             migrationBuilder.DropTable(
                 name: "Users");

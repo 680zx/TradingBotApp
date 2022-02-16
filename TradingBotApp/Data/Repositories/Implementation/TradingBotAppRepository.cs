@@ -13,6 +13,6 @@ namespace TradingBotApp.Data.Repositories.Implementation
         }
 
         public IQueryable<User> Users => _dbContext.Users;
-        public IQueryable<RamvQualifierTool> RamvQualifiers  => _dbContext.RamvQualifierTool;
+        public IQueryable<RamvQualifierTool> RamvQualifiers  => _dbContext.RamvQualifiers;
     }
 }

@@ -24,11 +24,11 @@ namespace TradingBotApp.Migrations
 
             modelBuilder.Entity("TradingBotApp.Models.RamvQualifierTool", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("ID"), 1L, 1);
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
                     b.Property<double>("MacdMaxDeviation")
                         .HasColumnType("float");
@@ -48,11 +48,11 @@ namespace TradingBotApp.Migrations
                     b.Property<int?>("UserId")
                         .HasColumnType("int");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("RamvQualifierTool");
+                    b.ToTable("RamvQualifiers");
                 });
 
             modelBuilder.Entity("TradingBotApp.Models.User", b =>

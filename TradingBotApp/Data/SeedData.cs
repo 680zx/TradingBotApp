@@ -1,5 +1,4 @@
-﻿using MarketProcessor.MarketConditionQualifiers.Implementation;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
 using TradingBotApp.Models;
 
 namespace TradingBotApp.Data
@@ -20,19 +19,40 @@ namespace TradingBotApp.Data
                 context.Database.Migrate();
             }
 
-            //if (!context.MarketTools.Any())
+            var users = new List<User>()
+            {
+                new User { Name = "Test1", Email = "test1@email.io" },
+                new User { Name = "Test2", Email = "test2@email.io" },
+                new User { Name = "Test3", Email = "test3@email.io" },
+                new User { Name = "Test4", Email = "test4@email.io" }
+            };
+
+            //if (!context.Users.Any())
             //{
-            //    context.MarketTools.AddRange(
-            //        new MarketTool { Name = "RAMV", Enabled = true },
-            //        new MarketTool { Name = "PriceAlarm", Enabled = true },
-            //        new MarketTool { Name = "BullMarket", Enabled = true },
-            //        new MarketTool { Name = "BearMarket", Enabled = false }
-            //     );
-
-            //    context.MarketQualifiers.AddRange
-
+            //    context.Users.AddRange(users);
+             
             //    context.SaveChanges();
             //}
+
+            if (!context.RamvQualifiers.Any())
+            {
+                var ramvs = new List<RamvQualifierTool>();
+                for (int i = 0; i < users.Count; i++)
+                {
+                    ramvs.Add(new RamvQualifierTool
+                    {
+                        User = users[i],
+                        MacdMaxDeviation = 0.2,
+                        MaxRecurrentCandleStickPeriod = 6,
+                        MinRecurrentCandleStickPeriod = 3,
+                        Status = true
+                    });
+                }
+
+                context.RamvQualifiers.AddRange(ramvs);
+
+                context.SaveChanges();
+            }
         }
     }
 }

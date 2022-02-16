@@ -6,7 +6,7 @@ namespace TradingBotApp.Models
     {
         [Key]
         [Display(Name = "ID")]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [Display(Name = "Name")]
         public virtual string Name { get; set;  }
