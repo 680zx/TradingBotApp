@@ -23,12 +23,11 @@ namespace TradingBotApp
                     options => options.EnableRetryOnFailure());
             });
 
-            services.AddScoped<IMarketToolRepository, MarketToolRepository>();
-            services.AddTransient<SeedData>();
+            //services.AddScoped<IMarketToolRepository, MarketToolRepository>();
+            //services.AddTransient<SeedData>();
         }
 
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,
-            SeedData seedData, IHostApplicationLifetime lifetime)
+        public void Configure(IApplicationBuilder app)//, IWebHostEnvironment env,            SeedData seedData, IHostApplicationLifetime lifetime)
         {                        
             app.UseDeveloperExceptionPage();
             app.UseStaticFiles();
@@ -46,13 +45,13 @@ namespace TradingBotApp
                 endpoints.MapDefaultControllerRoute();
             });
 
-            var cmdLineInit = (Configuration["INITDB"] ?? "false") == "true";
-            if (env.IsDevelopment() || cmdLineInit)
-            {
-                seedData.SeedDatabase(app);
-                if (cmdLineInit)
-                    lifetime.StopApplication();
-            }
+            //var cmdLineInit = (Configuration["INITDB"] ?? "false") == "true";
+            //if (env.IsDevelopment() || cmdLineInit)
+            //{
+            //    seedData.SeedDatabase(app);
+            //    if (cmdLineInit)
+            //        lifetime.StopApplication();
+            //}
         }
     }
 }

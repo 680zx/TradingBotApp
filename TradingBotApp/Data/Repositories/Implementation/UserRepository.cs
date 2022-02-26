@@ -12,6 +12,5 @@ namespace TradingBotApp.Data.Repositories.Implementation
         }
 
         public IQueryable<User> Users => _dbContext.Users;
-
     }
 }

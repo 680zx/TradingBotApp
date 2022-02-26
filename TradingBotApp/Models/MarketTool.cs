@@ -13,5 +13,7 @@ namespace TradingBotApp.Models
 
         [Display(Name = "Is Enabled")]
         public bool Status { get; set; }
+
+        public virtual int ToolTypeId { get; set; }
     }
 }

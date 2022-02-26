@@ -45,12 +45,10 @@ namespace TradingBotApp.Migrations
                     b.Property<bool>("Status")
                         .HasColumnType("bit");
 
-                    b.Property<int?>("UserId")
+                    b.Property<int>("ToolTypeId")
                         .HasColumnType("int");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("UserId");
 
                     b.ToTable("RamvQualifiers");
                 });
@@ -69,18 +67,23 @@ namespace TradingBotApp.Migrations
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int?>("RamvQualifierToolId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("RamvQualifierToolId");
 
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("TradingBotApp.Models.RamvQualifierTool", b =>
+            modelBuilder.Entity("TradingBotApp.Models.User", b =>
                 {
-                    b.HasOne("TradingBotApp.Models.User", "User")
+                    b.HasOne("TradingBotApp.Models.RamvQualifierTool", "RamvQualifierTool")
                         .WithMany()
-                        .HasForeignKey("UserId");
+                        .HasForeignKey("RamvQualifierToolId");
 
-                    b.Navigation("User");
+                    b.Navigation("RamvQualifierTool");
                 });
 #pragma warning restore 612, 618
         }
