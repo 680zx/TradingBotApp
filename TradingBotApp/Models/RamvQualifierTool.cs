@@ -2,7 +2,7 @@
 {
     public class RamvQualifierTool : MarketTool
     {
-        public override string Name { get; set; } = "RAMV qualifier";
+        public override string Name { get; set; } = "RAMV Qualifier";
 
         public override int ToolTypeId { get => 0; }
 
