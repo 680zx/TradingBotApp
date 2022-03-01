@@ -1,19 +1,18 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace TradingBotApp.Models
+namespace Entities.Models
 {
     public abstract class MarketTool
     {
         [Key]
-        [Display(Name = "ID")]
-        public int Id { get; set; }
+        public Guid Id { get; set; }
 
         [Display(Name = "Name")]
-        public virtual string Name { get; set;  }
+        public virtual string? Name { get; }
 
         [Display(Name = "Is Enabled")]
         public bool Status { get; set; }
 
-        public virtual int ToolTypeId { get; set; }
+        public virtual int ToolTypeId { get; }
     }
 }

@@ -1,12 +1,4 @@
 ﻿using NUnit.Framework;
-using System.Collections.Generic;
-using System.Linq;
-using Moq;
-using TradingBotApp.Data.Repositories.Interfaces;
-using TradingBotApp.Models;
-using MarketProcessor.MarketConditionQualifiers.Implementation;
-using TradingBotApp.Controllers;
-using Microsoft.AspNetCore.Mvc;
 
 namespace TradingBotApp.Tests.ControllerTests
 {

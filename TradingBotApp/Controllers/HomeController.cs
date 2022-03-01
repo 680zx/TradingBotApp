@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using TradingBotApp.Data.Repositories.Interfaces;
 
 namespace TradingBotApp.Controllers
 {

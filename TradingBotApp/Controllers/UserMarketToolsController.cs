@@ -1,29 +1,26 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using TradingBotApp.Data.Repositories.Interfaces;
-using MarketProcessor.MarketConditionQualifiers.Implementation;
-using TradingBotApp.Data;
-using TradingBotApp.Models;
+﻿using Entities;
+using Microsoft.AspNetCore.Mvc;
 
 namespace TradingBotApp.Controllers
 {
     public class UserMarketToolsController : Controller
     {
-        private readonly DataContext _context;
+        private readonly RepositoryContext _context;
 
-        public UserMarketToolsController(DataContext context)
+        public UserMarketToolsController(RepositoryContext context)
         {
             _context = context;
         }
 
         public IActionResult Index()
         {
-            var userId = 0;
-            var tools = _context.Users.Where(i => i.Id == userId).Select(i => new List<MarketTool>
-            {
-                i.RamvQualifierTool
-            }).FirstOrDefault();
+            //var userId = 0;
+            //var tools = _context.Users.Where(i => i.Id == userId).Select(i => new List<MarketTool>
+            //{
+            //    i.RamvQualifierTool
+            //}).FirstOrDefault();
 
-            return View(tools ?? new List<MarketTool>());
+            return View();// (tools ?? new List<MarketTool>());
         }
 
         public IActionResult Edit(string name)
