@@ -1,7 +1,8 @@
-﻿using Entities;
+﻿using Contracts;
+using Entities;
 using System.Linq.Expressions;
 
-namespace Repository.Contracts
+namespace Repository
 {
     public abstract class RepositoryBase<T> : IRepositoryBase<T> where T : class
     {
