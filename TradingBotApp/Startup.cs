@@ -1,4 +1,6 @@
-﻿using Entities;
+﻿using Contracts;
+using Entities;
+using Repository;
 using Microsoft.EntityFrameworkCore;
 
 namespace TradingBotApp
@@ -20,6 +22,8 @@ namespace TradingBotApp
                 optionsBuilder.UseSqlServer(Configuration["ConnectionStrings:TradingBotDbConnecton"],
                     options => options.EnableRetryOnFailure());
             });
+
+            services.AddScoped<IRepositoryWrapper, RepositoryWrapper>();
         }
 
         public void Configure(IApplicationBuilder app)
