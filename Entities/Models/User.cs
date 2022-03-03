@@ -4,6 +4,7 @@ namespace Entities.Models
 {
     public class User
     {
+        [Key]
         public Guid Id { get; set; }
 
         [Required(ErrorMessage = "Nickname is required")]
